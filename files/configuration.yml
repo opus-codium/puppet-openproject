@@ -1,0 +1,3 @@
+default:
+  email_delivery_method: :sendmail
+  session_store: :cache_store
