@@ -19,6 +19,7 @@ class openproject (
   $database_name,
   $database_user ,
   $database_password,
+  $version,
   $user = 'openproject',
   $group = 'openproject',
 ) {

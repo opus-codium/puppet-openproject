@@ -12,7 +12,7 @@ class openproject::repo {
     ensure   => present,
     provider => 'git',
     source   => 'https://github.com/opf/openproject.git',
-    revision => 'stable/5',
+    revision => "v${::openproject::version}",
     user     => $::deploy::user,
     depth    => 1,
   }
