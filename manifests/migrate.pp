@@ -1,9 +1,9 @@
 class openproject::migrate {
   include openproject
 
-  bundle::exec { 'openproject db:migrate db:seed':
+  bundle::exec { 'openproject db:migrate':
     path        => $::openproject::path,
-    command     => 'rake db:migrate db:seed',
+    command     => 'rake db:migrate',
     user        => $::openproject::user,
     group       => $::openproject::group,
     timeout     => 600,
@@ -17,6 +17,6 @@ class openproject::migrate {
     mode   => '0644',
   }
 
-  Bundle::Exec['openproject db:migrate db:seed'] ->
+  Bundle::Exec['openproject db:migrate'] ->
   File["${::openproject::path}/db/schema.rb"]
 }
