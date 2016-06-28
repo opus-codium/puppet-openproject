@@ -42,9 +42,9 @@ class openproject::setup {
   }
 
   concat { "${::openproject::path}/Gemfile.plugins":
-    ensure  => present,
-    owner   => $::deploy::user,
-    group   => $::deploy::group,
+    ensure => present,
+    owner  => $::deploy::user,
+    group  => $::deploy::group,
   }
 
   concat::fragment { "${::openproject::path}/Gemfile.plugins-orig":

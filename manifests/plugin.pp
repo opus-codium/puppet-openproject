@@ -1,7 +1,7 @@
 define openproject::plugin (
   $git,
-  $branch = undef,
   $directory,
+  $branch = undef,
 ) {
   if $branch {
     $content = "gem '${name}', git: '${git}', branch: '${branch}'\n"
