@@ -5,5 +5,6 @@ class openproject::user {
     ensure => present,
     home   => $::openproject::path,
     system => true,
+    groups => ['git'],
   }
 }
