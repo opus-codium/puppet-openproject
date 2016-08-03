@@ -2,6 +2,13 @@ class openproject::bundle {
   include openproject
 
   bundle::install { $openproject::path:
-    without => 'mysql mysql2 docker development test therubyracer',
+    without => [
+      'development',
+      'docker',
+      'mysql',
+      'mysql2',
+      'test',
+      'therubyracer',
+    ],
   }
 }
