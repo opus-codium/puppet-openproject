@@ -2,7 +2,7 @@ class openproject::migrate {
   include openproject
 
   bundle::exec { 'openproject db:migrate':
-    path        => $::openproject::path,
+    cwd         => $::openproject::path,
     command     => 'rake db:migrate',
     user        => $::openproject::user,
     group       => $::openproject::group,

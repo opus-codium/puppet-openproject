@@ -2,7 +2,7 @@ class openproject::assets {
   include openproject
 
   bundle::exec { 'openproject assets:precompile':
-    path        => $::openproject::path,
+    cwd         => $::openproject::path,
     command     => 'rake assets:precompile',
     user        => $::openproject::user,
     group       => $::openproject::group,
