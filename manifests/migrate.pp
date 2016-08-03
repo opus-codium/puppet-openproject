@@ -8,6 +8,7 @@ class openproject::migrate {
     group       => $::openproject::group,
     timeout     => 600,
     environment => ['RAILS_ENV=production', 'LANG=fr_FR.UTF-8'],
+    refreshonly => true,
   }
 
   file { "${::openproject::path}/db/schema.rb":

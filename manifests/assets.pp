@@ -8,5 +8,6 @@ class openproject::assets {
     group       => $::openproject::group,
     timeout     => 600,
     environment => ['RAILS_ENV=production'],
+    refreshonly => true,
   }
 }
