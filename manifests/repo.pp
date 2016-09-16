@@ -3,8 +3,8 @@ class openproject::repo {
 
   file { $::openproject::path:
     ensure => directory,
-    owner  => $::deploy::user,
-    group  => $::deploy::group,
+    owner  => $::openproject::deploy_user,
+    group  => $::openproject::deploy_group,
     mode   => '0755',
   }
 
@@ -13,7 +13,7 @@ class openproject::repo {
     provider => 'git',
     source   => 'https://github.com/opf/openproject.git',
     revision => "v${::openproject::version}",
-    user     => $::deploy::user,
+    user     => $::openproject::deploy_user,
     depth    => 1,
   }
 

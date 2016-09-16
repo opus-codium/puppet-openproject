@@ -22,8 +22,9 @@ class openproject (
   $version,
   $user = 'openproject',
   $group = 'openproject',
+  $deploy_user = 'deploy',
+  $deploy_group = 'deploy',
 ) {
-  include deploy
   include bundle
   include phantomjs
 
