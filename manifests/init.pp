@@ -39,28 +39,28 @@ class openproject (
   include openproject::assets
   include openproject::vhost
 
-  Class['openproject::packages'] ->
-  Class['openproject::user'] ->
-  Class['openproject::repo'] ->
-  Class['openproject::setup'] ->
-  Class['openproject::db'] ->
-  Class['openproject::bundle'] ->
-  Class['openproject::npm'] ->
-  Class['openproject::migrate'] ->
-  Class['openproject::assets'] ->
-  Class['openproject::vhost']
+  Class['openproject::packages']
+  -> Class['openproject::user']
+  -> Class['openproject::repo']
+  -> Class['openproject::setup']
+  -> Class['openproject::db']
+  -> Class['openproject::bundle']
+  -> Class['openproject::npm']
+  -> Class['openproject::migrate']
+  -> Class['openproject::assets']
+  -> Class['openproject::vhost']
 
-  Class['openproject::repo'] ~>
-  Class['openproject::bundle'] ~>
-  Class['openproject::npm'] ~>
-  Class['openproject::migrate']
+  Class['openproject::repo']
+  ~> Class['openproject::bundle']
+  ~> Class['openproject::npm']
+  ~> Class['openproject::migrate']
 
-  Class['openproject::npm'] ~>
-  Class['openproject::assets'] ~>
-  Class['openproject::vhost']
+  Class['openproject::npm']
+  ~> Class['openproject::assets']
+  ~> Class['openproject::vhost']
 
-  Class['openproject::db'] ~>
-  Class['openproject::migrate']
+  Class['openproject::db']
+  ~> Class['openproject::migrate']
 
   file { '/srv/www':
     ensure => directory,

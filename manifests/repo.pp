@@ -17,6 +17,6 @@ class openproject::repo {
     depth    => 1,
   }
 
-  File[$::openproject::path] ->
-  Vcsrepo[$::openproject::path]
+  File[$::openproject::path]
+  -> Vcsrepo[$::openproject::path]
 }
