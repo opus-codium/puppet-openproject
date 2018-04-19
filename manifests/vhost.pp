@@ -13,10 +13,11 @@ class openproject::vhost {
       "SECRET_KEY_BASE ${::openproject::secret_key_base}",
     ],
     directories    => [
-      { 'path'         => "${::openproject::path}/public",
+      {
+        'path'         => "${::openproject::path}/public",
         options        => 'None',
         allow_override => 'None',
-      }
+      },
     ],
   }
 }

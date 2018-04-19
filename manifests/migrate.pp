@@ -18,6 +18,6 @@ class openproject::migrate {
     mode   => '0644',
   }
 
-  Bundle::Exec['openproject db:migrate'] ->
-  File["${::openproject::path}/db/schema.rb"]
+  Bundle::Exec['openproject db:migrate']
+  -> File["${::openproject::path}/db/schema.rb"]
 }
